@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+  <div class="logo">
+        
+    <a href="/"><img src="{{ url_for('static', filename='images/k2.png')}}"  alt="img" style="max-width: 300px; max-height: 300px"></img></a>
+
+  </div>
+>
+</head>
+
+<body>
+
+<div>
+  
+  <form action="/search" method="post">
+    <div class="input-group mb-3">
+      <select name="primary_key" class="input-group-text" id="inputGroup-sizing-default">
+        <option><a class="dropdown-item" href="">PATIENT ID</a></option>
+        <option><a class="dropdown-item" href="">FIRST NAME</a></option>
+        <option><a class="dropdown-item" href="">LAST NAME</a></option>
+      </select>
+      <input name="inp"type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      <button type="reset" value="reset" class="btn btn-secondary">Clear</button>
+    </div>
+  </form>
+  
+
+  <!-- input for the first name  -->
+  <form action="/all_data" method="post">
+   
+    <button type="submit" class="btn btn-primary">all data </button>
+  </form>
+  
+  <div>
+    <table class="table  table-striped">
+      <thead>
+        
+        <trclass="">
+          <th scope="col">Sl no. </th>
+          <th scope="col">Firstname </th>
+          <th scope="col">Lastname </th>
+          <th scope="col">patient id </th>
+          <th scope="col">email </th>
+          <th scope="col">gender </th>
+          <th scope="col">dob </th>
+          <th scope="col">adhar </th>
+          <th scope="col">phno </th>
+          <th scope="col">score </th>
+          <th scope="col">result </th>
+          </tr>
+      </thead>
+    <!-- 
+      create table if not exists `pat_info` (
+        `id` varchar(14) not null ,
+        `fname` varchar(50) not null,
+        `lname` varchar(50) not null,
+        `email` varchar(100) not null,
+        `gender` varchar(100) not null,
+        `dob` varchar(100) not null,
+        `adhar` varchar(100) not null,
+        `phno` varchar(100) not null,
+        `postalcode` varchar(100) not null,
+        `score` varchar(100) not null,
+        `result` varchar(100) not null,
+        primary key(`id`))
+      default charset=utf8; -->
+
+      <tbody>
+
+        {% for todo in parent_list %}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{todo.fname}}</td>
+          <td>{{todo.lname}}</td>
+          <td>{{todo.id}}</td>
+          <td>{{todo.email}}</td>
+          <td>{{todo.gender}}</td>
+          <td>{{todo.dob}}</td>
+          <td>{{todo.adhar}}</td>
+          <td>{{todo.phno}}</td>
+          <td>{{todo.score}}</td>
+          <td>{{todo.result}}</td>
+
+        </tr>
+              
+        {% endfor %}
+      </tbody>
+
+
+
+
+
+    </table>
+
+  </div>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
+

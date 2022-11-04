@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %} resukt{% endblock title %} 
+
+j
+<style>
+    .mydiv{
+      border: 5px outset;
+      background-color:#abcf9b;    
+      text-align: center;
+    }</style>
+
+{% block body %}
+
+
+<h2>Final Results</h2>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<body>
+    <!-- if key and value pair is added in the context_processor then it below code will work but its showing content not found -->
+    <!-- <div class="mydiv"> 
+
+        <h2>Name:{{ Name }}</h2>
+        <h2>Email:{{ Email }}</h2>
+        <h2>DOB:{{ Dob }}</h2>
+        <h2>Gender:{{ Gender }}</h2>
+        <h2>PIN code:{{ PIN }}</h2>
+        <br>
+    </div> -->
+    <h2>patient id :{{id}}</h2>
+    <h2>{{ bio() }}</h2>
+   <h3>
+       as score is:{{sc}} <br>
+       result :{{ result }} <br>
+    </h3>
+<br>
+    <form action="/back" method='post'>
+        <button type="back" class="btn btn-primary" >back</button>
+        <!-- <button type="button" onclick="location.href = 'success/signup.html'" class="btn btn-primary" >home</button> -->
+        <!-- this onclick location .href can ref=direct us to the home page with eith adding any extra /<functionname> to our url -->
+            <button onclick="location.href='/'" type="button" class="btn btn-danger">HOME</button>
+        </form>
+    <!-- <form action="/" method='post'>
+        <button type="back" class="btn btn-primary" >home</button>
+        <button name="home" onclick="home()">home</button>
+      </form> 
+      <a href="/" class="btn">homepage</a> --> 
+       
+</body>
+
+{% endblock body %}

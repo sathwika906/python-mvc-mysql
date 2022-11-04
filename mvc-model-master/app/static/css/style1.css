@@ -1,0 +1,30 @@
+
+   .myTable {
+      background-color: #eee;
+      border-collapse: collapse;
+   }
+
+   .myTable th {
+      background-color: rgb(173, 68, 68);
+      color: white;
+      width: 50%;
+   }
+
+   .myTable td,
+   .myTable th {
+      padding: 5px;
+      border: 1px solid #000;
+   }
+
+   table {
+      border-collapse: collapse;
+   }
+
+   th,
+   td {
+      border: 1px solid;
+      height: 70px;
+      padding: 10px;
+      text-align: left;
+      background-color:#e0e0eb;
+   }
